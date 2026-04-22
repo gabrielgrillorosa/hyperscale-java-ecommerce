@@ -5,6 +5,9 @@ This repository captures the hyperscale ecommerce lab that scales a Spring Boot 
 ## Summary
 Hands-on exploration of how to build, secure, optimize, and operate a hyperscale commerce platform. The lab blends JVM tuning, distributed systems patterns, performance engineering, and site reliability rigor so that every layer—auth, order, inventory, gateway—survives relentless traffic and evolving requirements.
 
+## Principal Software Architecture
+The lab begins with a multi-module monolith so that every developer understands how a single Spring Boot execution behaves under load. We apply Domain-Driven Design to carve bounded contexts out of that modular monolith; as contexts become well understood, they evolve into a distributed mesh of microservices. This approach minimizes premature distribution, keeps the JVM surface area manageable during early experimentation, and lets the team iterate toward a secure, scalable mesoscale architecture once the domains are defined.
+
 ## Project Overview
 1. **JVM and Spring Foundations** – Master virtual threads, class data sharing, GraalVM natives, and Spring module boundaries before splitting into services.
 2. **Distributed Perimeter** – Centralized identity (Keycloak), gateway-based request control, and token propagation that keep every entry point safe.
